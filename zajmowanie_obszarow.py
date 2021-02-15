@@ -189,7 +189,7 @@ class Game:
 	def granie(self):# sprawdzić czy nie wyrzucić
 		self.mouse=(self.mouse_x,self.mouse_y)
 	def music(self):
-		pygame.mixer.music.load("/home/urgith/Pulpit/PROGRAMOWANIE/Python/gry/muzyka.ogg")
+		pygame.mixer.music.load("/home/urgith/Pulpit/PROGRAMOWANIE/Python/gry/dane/muzyka.ogg")
 		pygame.mixer.music.play(-1)
 		pygame.event.wait()
 	def stopmusic(self):
