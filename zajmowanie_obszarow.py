@@ -36,7 +36,7 @@ class Game:
 	def background(self):
 		self.screen=pygame.display.set_mode((1300,700))
 		pygame.display.set_caption("Moja gra")
-		background_image=pygame.image.load("C:\\Users\\LENOVO\\Desktop\\Michał\\zadnia\\semestr2\\lista7\\tlo.png").convert()
+		background_image=pygame.image.load("/home/urgith/Pulpit/PROGRAMOWANIE/Python/gry/tlo.png").convert()
 		self.screen.blit(background_image,[0,0])
 	def pole_gry(self):
 		self.tura=0
@@ -189,7 +189,7 @@ class Game:
 	def granie(self):# sprawdzić czy nie wyrzucić
 		self.mouse=(self.mouse_x,self.mouse_y)
 	def music(self):
-		pygame.mixer.music.load("C:\\Users\\LENOVO\\Desktop\\Michał\\zadnia\\semestr2\\lista7\\1234.ogg")
+		pygame.mixer.music.load("/home/urgith/Pulpit/PROGRAMOWANIE/Python/gry/muzyka.ogg")
 		pygame.mixer.music.play(-1)
 		pygame.event.wait()
 	def stopmusic(self):
