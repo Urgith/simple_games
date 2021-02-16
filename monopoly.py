@@ -50,10 +50,6 @@ class Gra:
     self.fig=figure
     self.tura=tura
     rysowanie_planszy()
-    self.x=0
-    self.y=0
-    self.cid=self.fig.canvas.mpl_connect('button_press_event', self)
-    self.dic=self.fig.canvas.mpl_connect('button_release_event', self)
     plt.axis('off')
     plt.xlim(0,10)
     plt.ylim(0,11)
@@ -61,19 +57,12 @@ class Gra:
     matplotlib.axes.Axes.text(plt.gca(),0.2,10.35,f'Money: {gracze[1].money}$',fontsize=15,color=gracze[1].color)
     matplotlib.axes.Axes.text(plt.gca(),0.2,0.35,f'Money: {gracze[0].money}$',fontsize=15,color=gracze[0].color)
     matplotlib.axes.Axes.text(plt.gca(),3.9,6.2,'Gracz',fontsize=30,color=gracze[tura%2].color)
-    plt.show()
-
-  def __call__(self, event):
-    if self.dic:
-      if event.inaxes:
-        event.canvas.mpl_disconnect(self.cid)
-        event.canvas.mpl_disconnect(self.dic)
-    if event.inaxes:
-      self.tura+=1
-      self.x=event.x
-      self.y=event.y
-      Gracz.ruch(gracze[tura%2],tura,pola)
-      plt.close()
+    zmienna=True
+    while zmienna:
+      zmienna=plt.waitforbuttonpress()
+    self.tura+=1
+    Gracz.ruch(gracze[tura%2],tura,pola)
+    plt.close()
 
 class Gracz:
 
